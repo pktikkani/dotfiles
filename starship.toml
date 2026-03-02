@@ -1,50 +1,27 @@
-"$schema" = 'https://starship.rs/config-schema.json'
-
+"$schema" = 'https://starship.rs/config-schema.json'                                                                                                                                                                                                                                                                                                                                                                                      command_timeout = 10000
 format = """
 [](surface0)\
 $os\
 $username\
 [](bg:peach fg:surface0)\
-$directory\
-[](fg:peach bg:green)\
-$git_branch\
-$git_status\
-[](fg:green bg:teal)\
-$c\
+$directory\                                                                                                                                                                                                          [](fg:peach bg:green)\
+$git_branch\                                                                                                                                                                                                         $git_status\
+[](fg:green bg:teal)\                                                                                                                                                                                               $c\
 $rust\
 $golang\
 $nodejs\
 $php\
-$java\
-$kotlin\
-$haskell\
-$python\
-[](fg:teal bg:blue)\
-$docker_context\
-[](fg:blue bg:purple)\
-$time\
-[ ](fg:purple)\
-$line_break$character"""
-
-palette = 'catppuccin_mocha'
-
-
-[palettes.catppuccin_mocha]
+$java\                                                                                                                                                                                                               $kotlin\                                                                                                                                                                                                             $haskell\                                                                                                                                                                                                            $python\                                                                                                                                                                                                             $aws\                                                                                                                                                                                                                $kubernetes\                                                                                                                                                                                                         [](fg:teal bg:blue)\
+$docker_context\                                                                                                                                                                                                     [](fg:blue bg:purple)\                                                                                                                                                                                              $time\                                                                                                                                                                                                               [ ](fg:purple)\                                                                                                                                                                                                     $line_break$character"""
+palette = 'catppuccin_mocha'                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   [palettes.catppuccin_mocha]
 rosewater = "#f5e0dc"
 flamingo = "#f2cdcd"
 pink = "#f5c2e7"
-orange = "#cba6f7"
-red = "#f38ba8"
+orange = "#cba6f7"                                                                                                                                                                                                   red = "#f38ba8"
 maroon = "#eba0ac"
-peach = "#fab387"
-yellow = "#f9e2af"
-green = "#a6e3a1"
-teal = "#94e2d5"
-sky = "#89dceb"
-sapphire = "#74c7ec"
-blue = "#89b4fa"
-lavender = "#b4befe"
-text = "#cdd6f4"
+peach = "#fab387"                                                                                                                                                                                                    yellow = "#f9e2af"
+green = "#a6e3a1"                                                                                                                                                                                                    teal = "#94e2d5"                                                                                                                                                                                                     sky = "#89dceb"
+sapphire = "#74c7ec"                                                                                                                                                                                                 blue = "#89b4fa"                                                                                                                                                                                                     lavender = "#b4befe"                                                                                                                                                                                                 text = "#cdd6f4"
 subtext1 = "#bac2de"
 subtext0 = "#a6adc8"
 overlay2 = "#9399b2"
@@ -83,7 +60,7 @@ Redhat = "󱄛"
 RedHatEnterprise = "󱄛"
 
 [username]
-show_always = true
+disabled = true
 style_user = "bg:surface0 fg:text"
 style_root = "bg:surface0 fg:text"
 format = '[ $user ]($style)'
@@ -113,47 +90,52 @@ format = '[[($all_status$ahead_behind )](fg:base bg:green)]($style)'
 [nodejs]
 symbol = ""
 style = "bg:teal"
-format = '[[ $symbol( $version) ](fg:base bg:teal)]($style)'
+format = '[[ $symbol ](fg:base bg:teal)]($style)'
 
 [c]
 symbol = " "
 style = "bg:teal"
-format = '[[ $symbol( $version) ](fg:base bg:teal)]($style)'
+format = '[[ $symbol ](fg:base bg:teal)]($style)'
 
 [rust]
 symbol = ""
 style = "bg:teal"
-format = '[[ $symbol( $version) ](fg:base bg:teal)]($style)'
+format = '[[ $symbol ](fg:base bg:teal)]($style)'
 
 [golang]
 symbol = ""
 style = "bg:teal"
-format = '[[ $symbol( $version) ](fg:base bg:teal)]($style)'
+format = '[[ $symbol ](fg:base bg:teal)]($style)'
 
 [php]
 symbol = ""
 style = "bg:teal"
-format = '[[ $symbol( $version) ](fg:base bg:teal)]($style)'
+format = '[[ $symbol ](fg:base bg:teal)]($style)'
 
 [java]
 symbol = " "
 style = "bg:teal"
-format = '[[ $symbol( $version) ](fg:base bg:teal)]($style)'
+format = '[[ $symbol ](fg:base bg:teal)]($style)'
 
 [kotlin]
 symbol = ""
 style = "bg:teal"
-format = '[[ $symbol( $version) ](fg:base bg:teal)]($style)'
+format = '[[ $symbol ](fg:base bg:teal)]($style)'
 
 [haskell]
 symbol = ""
 style = "bg:teal"
-format = '[[ $symbol( $version) ](fg:base bg:teal)]($style)'
+format = '[[ $symbol ](fg:base bg:teal)]($style)'
 
-[python]
-symbol = ""
+[aws]
+format = '[[ ☁️ $profile ](fg:base bg:teal)]($style)'
 style = "bg:teal"
-format = '[[ $symbol( $version) ](fg:base bg:teal)]($style)'
+disabled = false
+
+[kubernetes]
+format = '[[ ⎈ $context ](fg:base bg:teal)]($style)'
+style = "bg:teal"
+disabled = false
 
 [docker_context]
 symbol = ""
@@ -177,3 +159,22 @@ vimcmd_symbol = '[](bold fg:creen)'
 vimcmd_replace_one_symbol = '[](bold fg:purple)'
 vimcmd_replace_symbol = '[](bold fg:purple)'
 vimcmd_visual_symbol = '[](bold fg:lavender)'
+
+
+[aws.profile_aliases]
+"AWSAdministratorAccess-444184778699" = "admin"
+
+[[kubernetes.contexts]]
+context_pattern = "kubernetes-the-hard-way"
+context_alias = "k8s-hw"
+
+
+
+
+
+[python]
+symbol = "🐍"
+style = "bg:teal"
+format = '[[ $symbol $version ($virtualenv) ](fg:base bg:teal)]($style)'
+detect_extensions = ["py"]
+detect_files = [".python-version", "Pipfile", "pyproject.toml", "requirements.txt"]
